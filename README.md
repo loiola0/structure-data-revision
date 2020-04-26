@@ -1,9 +1,9 @@
 <h1>Structure Data Revision</h1>
 <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/109554168/original/11242e714fd279867e25900db79930794e19ec4e/help-you-with-your-data-structures-queries-and-issues.png"
 width="300" height="200">
-<h3><strog>Códigos utilizados numa breve resivão de Estrutura de Dados[período quarentena].</strog></h3>
+<h3><strog>Codes used during data structures review.</strog></h3>
 <br/>
 
-- [X] Implementar Lista Simplesmente Encadiada.
-- [ ] Implementar Pilha.
-- [ ] Implementar Fila.
+- [X] Linked List-completed.
+- [ ] Stack-To implement.
+- [ ] Row-To implement.
