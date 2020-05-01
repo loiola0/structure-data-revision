@@ -5,5 +5,7 @@ width="300" height="200">
 <br/>
 
 - [X] Linked List-completed.
-- [ ] Stack-To implement.
+- [X] Stack-completed.
 - [ ] Row-To implement.
+- [ ] BubbleSort - To implement.
+- [ ] MergeSort - To implement.
