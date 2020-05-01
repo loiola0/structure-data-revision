@@ -41,6 +41,14 @@ private:
  //cabeça da lista(primeiro nó).
  std::unique_ptr<Node> first;
 
+protected:
+
+    void pushNonExistingKey(Key key,Val val){
+        std::unique_ptr<Node> newNode{std::make_unique<Node>(key,val)};
+        newNode->next = std::move(first);
+        first = std::move(newNode);
+    }
+
 public:
 
 LinkedList(): first{nullptr}
@@ -49,7 +57,7 @@ LinkedList(): first{nullptr}
 LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
 {}
 
- bool isEmpty(){
+ bool isEmpty() const{
      return first == nullptr;
  }
 
@@ -75,10 +83,7 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
          return false;
      }
      else{
-         std::unique_ptr<Node> newNode{std::make_unique<Node>(key,val)};
-         newNode->next = std::move(first);
-         first = std::move(newNode);
-
+         pushNonExistingKey(key,val);
          return true;
 
      }
@@ -103,7 +108,12 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
         
         Val deleteVal = currentNode->val;
 
-        previousNode->next = std::move(currentNode->next);
+        if(previousNode){
+          previousNode->next = std::move(currentNode->next);
+        }else{
+            first = std::move(currentNode->next);
+        }
+        
 
         return deleteVal;
 
@@ -119,7 +129,7 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
          std::unique_ptr<Node> newNode{std::make_unique<Node>(key,val)};
          auto[previousNode,currentNode] = nodesWithExistingKey(first.get(),refkey);
 
-        //TODO declarou previousNode como nullptr para já que estamos utilizanod-o, não notifique Wars.
+        //TODO declarou previousNode como nullptr para já que estamos utilizando-o, não notifique Warns.
          previousNode = nullptr;
 
          newNode->next = std::move(currentNode->next);
@@ -131,7 +141,7 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
      }
  }
 
- void imprimir(){
+ void imprimir() const {
      const Node *currentNode = first.get();
     if(!isEmpty()){
         while(currentNode){
@@ -143,6 +153,6 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
     }else{
         std::cout << "lista vazia!"<<std::endl;
     }
-}   
+  }
 
 };
