@@ -141,18 +141,4 @@ LinkedList(Key key,Val val):first{std::make_unique<Node>(key,val)}
      }
  }
 
- void imprimir() const {
-     const Node *currentNode = first.get();
-    if(!isEmpty()){
-        while(currentNode){
-        std::cout << "key: " << currentNode->key << " value: " << currentNode->val <<std::endl;
-
-        currentNode = currentNode->next.get();
-    }
- 
-    }else{
-        std::cout << "lista vazia!"<<std::endl;
-    }
-  }
-
 };
