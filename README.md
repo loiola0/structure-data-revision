@@ -7,6 +7,6 @@ width="300" height="200">
 - [X] Linked List-completed.
 - [X] Stack-completed.
 - [X] Queue-To implement.
-- [X] InsertionSort - To implement.
-- [X] MergeSort - To implement.
+- [X] InsertionSort -completed.
+- [X] MergeSort -completed.
 - [ ] BubbleSort - To implement.
