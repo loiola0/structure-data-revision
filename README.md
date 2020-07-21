@@ -8,5 +8,5 @@ width="300" height="200">
 - [X] Stack-completed.
 - [X] Queue-To implement.
 - [X] InsertionSort - To implement.
-- [ ] MergeSort - To implement.
+- [X] MergeSort - To implement.
 - [ ] BubbleSort - To implement.
